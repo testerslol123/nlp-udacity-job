@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
     <title>NLP Home</title>
 </head>
 <body>
-    <h1>This is the Index Page</h1>
+    <header>
+        <h2>Natural Language Processing - Udacity Project</h2>
+    </header>
+
+    <main>
+        <section class="text-input">
+            <form id="main-form">
+                <input id="url" type="text" name="url" placeholder="site to lookup">
+                <!-- <input type="button" value="call API" id="btn"> -->
+                <button id="api-call">API call</button>
+            </form>
+        </section>
+
+        <section class="api-call-results">
+        </section>
+    </main>
 </body>
+<script src="app.js"></script>
+
 </html>
