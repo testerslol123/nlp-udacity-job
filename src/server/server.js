@@ -23,16 +23,17 @@ app.use(express.urlencoded( {extended: true}));
 
 
 app.post('/api', (req, res) => {
-    console.log(`Request is ${req.body.fullurl}`);
     const url = `https://api.openweathermap.org/data/2.5/weather?zip=${req.body.fullurl},us&appid=${key}`;
+    const sent_url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${req.body.fullurl}&model=general`
+    console.log(sent_url)
     
-    axios.get(url)
+    axios.get(sent_url)
         .then(data => {
             //console.log(data.data);
             const dataPackage = createPackage(data.data);
             console.log(dataPackage);
-            //res.send(dataPackage)})
-            res.json(dataPackage);})
+            res.send(dataPackage)})
+            //res.json(data);})
         .catch(error => {
             console.log('ERROR')
             console.log(error);
@@ -45,13 +46,10 @@ function createPackage(data){
     // console.log(date.toDateString());
 
     const package = {
-        "date" : date.toDateString(),
-        "city" : data.name,
-        "icon" : data.weather[0].icon,
-        "wind" : data.wind.speed,
-        "temp" : data.main.temp,
-        "long" : data.coord.lon,
-        "lat" : data.coord.lat,
+        "agreement" : data.agreement,
+        "subjectivity" : data.subjectivity,
+        "confidence" : data.confidence,
+        "irony:" : data.irony
     };
 
     return package;
