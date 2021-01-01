@@ -1,19 +1,15 @@
-const btn = document.getElementById('api-call');
-const txtBox = document.getElementById('url');
+const btn = document.getElementById('btn');
+const url = document.getElementById('url');
 
 
-btn.addEventListener("click", function () {
-    handleSubmission(txtBox.value);
+btn.addEventListener("click", function() {
+    console.log('button clicked');
+    callAPI(url.value);
 });
 
 
 
-async function handleSubmission(url){
-
-    console.log('this is it')
-    console.log("hello")
-    console.log(`The URL is ${url}`);
-
+async function callAPI(url){
 
     fetch('/api', {
         method: 'POST',
@@ -22,12 +18,14 @@ async function handleSubmission(url){
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            url: url
+            fullurl: url
         })
 
     }).then(res => res.json()).then(data => {
         console.log(data);
-        
+    
     });
 
 }
+
+
