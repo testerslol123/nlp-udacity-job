@@ -4,6 +4,7 @@ const url = document.getElementById('url');
 
 btn.addEventListener("click", function() {
     console.log('button clicked');
+    console.log('hello');
     callAPI(url.value);
 });
 

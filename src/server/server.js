@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const cors = require('cors');
+let bodyParser = require('body-parser')
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -18,9 +19,14 @@ const key = '81c30a80ddd5b3a82bcf35083a43ed9c';
 
 app.use(express.static('C:/repos/nlp/src/views'));
 app.use(express.json());
-app.use(express.urlencoded( {extended: true}));
+// app.use(express.urlencoded( {extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
+app.get('/', (req, res) => {
+    res.send({});
+});
 
 app.post('/api', (req, res) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?zip=${req.body.fullurl},us&appid=${key}`;
