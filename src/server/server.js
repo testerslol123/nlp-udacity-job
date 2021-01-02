@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const cors = require('cors');
-let bodyParser = require('body-parser')
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -19,31 +17,28 @@ const key = '81c30a80ddd5b3a82bcf35083a43ed9c';
 
 app.use(express.static('C:/repos/nlp/src/views'));
 app.use(express.json());
-// app.use(express.urlencoded( {extended: true}));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded( {extended: true}));
 
-
-app.get('/', (req, res) => {
-    res.send({});
-});
+// app.get('/weather', (req, res) => {
+//     res.send(entries)
+// });
 
 app.post('/api', (req, res) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${req.body.fullurl},us&appid=${key}`;
-    const sent_url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${req.body.fullurl}&model=general`
-    console.log(sent_url)
+    console.log(req.body)
+    const url = `https://api.meaningcloud.com/sentiment-2.1?key=1bdf1b7435842042c123f1b3fe57a74e&lang=en&url=${req.body.url}&model=general`
+    console.log(url)
+    // const url = `https://api.meaningcloud.com/sentiment-2.1?key=1bdf1b7435842042c123f1b3fe57a74e&lang=en&url=https://www.archives.gov/founding-docs/declaration-transcript&model=general`
     
-    axios.get(sent_url)
+    axios.get(url)
         .then(data => {
-            //console.log(data.data);
-            const dataPackage = createPackage(data.data);
-            console.log(dataPackage);
-            res.send(dataPackage)})
-            //res.json(data);})
+            console.log(data.data);
+            //const dataPackage = createPackage(data.data);
+            //console.log(dataPackage);
+            res.json(data.data);})
         .catch(error => {
-            console.log('ERROR')
             console.log(error);
         })
+
 
 });
 
@@ -52,10 +47,13 @@ function createPackage(data){
     // console.log(date.toDateString());
 
     const package = {
-        "agreement" : data.agreement,
-        "subjectivity" : data.subjectivity,
-        "confidence" : data.confidence,
-        "irony:" : data.irony
+        "date" : date.toDateString(),
+        "city" : data.name,
+        "icon" : data.weather[0].icon,
+        "wind" : data.wind.speed,
+        "temp" : data.main.temp,
+        "long" : data.coord.lon,
+        "lat" : data.coord.lat,
     };
 
     return package;
@@ -63,4 +61,3 @@ function createPackage(data){
 
 
 app.listen(port, () => console.log(`listening on port ${port}`));
-

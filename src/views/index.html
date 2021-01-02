@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="app.js" type="text/javascript"></script>
-    <title>Udacity - NLP</title>
+    <script defer src="app.js"></script>
+    <title>Weather App</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="header">Natural Language Processing</h1>
-            <form action="">
-                <input type="text" name="" id="url">
-                <button label="test" id="btn">Process</button>
-            </form>
-                
+        <h1 class="header">Weather App</h1>
+
+        <div class="collect">
+            <input type="text" placeholder="Enter the URL" name="zip" id="url">
+            <button label="test" id="btn">Process</button>
+        </div>
+
+
+        <div class="top-display">
+            <div class="icon" id="icon-image"></div>
+            <div class="display">
+                <div class="display-block">
+                    <div class="display-box" id="irony">IRONY</div>
+                    <div class="display-box" id="confidence">CONFIDENCE</div>
+                </div>
+                <div class="display-block">
+                    <div class="display-box" id="agreement">AGREEMENT</div>
+                    <div class="display-box" id="subjectivity">SUBJECTIVITY</div>
+                </div>
             </div>
+        </div>
+
+
 
     </div>
 
