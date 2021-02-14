@@ -1,0 +1,1 @@
+import "/src/client/views/app.js"
