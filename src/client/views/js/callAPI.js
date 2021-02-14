@@ -1,4 +1,5 @@
-import {checkURL} from checkURL
+// import {checkURL} from checkURL
+import {cleanData} from "/js/cleanData.js"
 
 
 async function callAPI(){
@@ -19,5 +20,8 @@ async function callAPI(){
     });
 
 }
+
+
+
 
 export { callAPI }

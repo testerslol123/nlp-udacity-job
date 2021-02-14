@@ -1,4 +1,5 @@
-import {callAPI} from "../js/callAPI";
+import {callAPI} from "/js/callAPI.js";
+import {checkURL} from "/js/checkURL.js"
 
 const btn = document.getElementById('btn');
 const url = document.getElementById('url');
@@ -11,38 +12,17 @@ const subjectivity = document.getElementById('subjectivity');
 
 
 btn.addEventListener("click", function() {
-    console.log(url.value);
-    callAPI();
+
+    if (checkURL(url.value)) 
+        {
+        console.log(url.value);
+        callAPI();
+        }
+    else 
+        {
+            console.log('Invalid URL')
+        };
+
 });
 
 
-// async function callAPI(){
-
-//     fetch('/api', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             url: url.value
-//         })
-
-//     }).then(res => res.json()).then(data => {
-//         console.log(data);
-//         cleanData(data);
-//     });
-
-// }
-
-
-
-function cleanData(data) {
-
-    irony.textContent = `IRONY: ${data.irony}`;
-    confidence.textContent = `CONFIDENCE: ${data.confidence}`;
-    agreement.textContent = `AGREEMENT: ${data.agreement}`;
-    subjectivity.textContent = `SUBJECTIVITY: ${data.subjectivity}`;
-    console.log()
-
-}
