@@ -1,4 +1,4 @@
-import {callAPI} from "../client/js/callAPI";
+import {callAPI} from "../js/callAPI";
 
 const btn = document.getElementById('btn');
 const url = document.getElementById('url');
