@@ -1,3 +1,5 @@
+import {callAPI} from "../client/js/callAPI";
+
 const btn = document.getElementById('btn');
 const url = document.getElementById('url');
 
@@ -14,24 +16,24 @@ btn.addEventListener("click", function() {
 });
 
 
-async function callAPI(){
+// async function callAPI(){
 
-    fetch('/api', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            url: url.value
-        })
+//     fetch('/api', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             url: url.value
+//         })
 
-    }).then(res => res.json()).then(data => {
-        console.log(data);
-        cleanData(data);
-    });
+//     }).then(res => res.json()).then(data => {
+//         console.log(data);
+//         cleanData(data);
+//     });
 
-}
+// }
 
 
 

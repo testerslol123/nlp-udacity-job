@@ -16,7 +16,9 @@
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/myportfolio-tech/nlp-udacity.git"
