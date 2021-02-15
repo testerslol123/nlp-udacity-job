@@ -1,3 +1,5 @@
+import {checkURL} from "./checkURL"
+import {callAPI} from "./callAPI"
 
 function handleClick()
     {
@@ -11,20 +13,19 @@ function handleClick()
         
         console.log('button pressed')
         
-        btn.addEventListener("click", function() {
         
-            if (checkURL(url.value)) {
-                console.log(url.value);
-                callAPI();
-                }
-            else 
-                {
-                    console.log('Invalid URL')
-                };
-        
-        });
+        if (checkURL(url.value)) {
+            console.log(url.value);
+            callAPI();
+            }
+        else 
+            {
+                console.log('Invalid URL')
+            };
+    
+    };
 
-    }
+ 
 
 
 export {handleClick}
