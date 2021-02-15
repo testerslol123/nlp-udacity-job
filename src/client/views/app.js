@@ -1,5 +1,6 @@
-import {callAPI} from "/src/client/views/js/callAPI.js";
-import {checkURL} from "/src/client/views/js/checkURL.js"
+import {callAPI} from "/src/client/js/callAPI.js";
+import {checkURL} from "/src/client/js/checkURL.js"
+import "/src/client/styles/style.css"
 
 const btn = document.getElementById('btn');
 const url = document.getElementById('url');

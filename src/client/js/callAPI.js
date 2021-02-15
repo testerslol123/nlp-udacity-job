@@ -1,5 +1,5 @@
 // import {checkURL} from checkURL
-import {cleanData} from "/src/client/views/js/cleanData.js"
+import {cleanData} from "/src/client/js/cleanData.js"
 
 
 async function callAPI(){
