@@ -18,7 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Serving Static
-app.use(express.static(path.join(__dirname, '../client/views')));
+// app.use(express.static('dist'));
+// app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static('src/dist'));
 app.use(favicon(path.join(__dirname, '../client/views', 'favicon.ico')));
 
 app.post('/api', async (req, res) => {

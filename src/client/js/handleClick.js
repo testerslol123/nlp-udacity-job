@@ -9,7 +9,7 @@ function handleClick()
         const agreement = document.getElementById('agreement'); 
         const subjectivity = document.getElementById('subjectivity'); 
         
-        
+        console.log('button pressed')
         
         btn.addEventListener("click", function() {
         
