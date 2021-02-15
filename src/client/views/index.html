@@ -13,8 +13,9 @@
         <h1 class="header">Weather App</h1>
 
         <div class="collect">
-            <input type="text" placeholder="Enter the URL" name="zip" id="url">
-            <button label="test" id="btn">Process</button>
+            <input type="text" placeholder="Enter the URL" onblur="onBlur()" name="zip" id="url">
+            <input type="submit" name="" value="submit" onclick="return handleClick(event)" onsubmit="return handleClick(event)">
+            <!-- <button label="test" id="btn">Process</button> -->
         </div>
 
 
