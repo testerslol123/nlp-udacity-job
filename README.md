@@ -5,7 +5,7 @@ This projects calls a NLP APi and displays the results of a provided link.
 The projects has 4 commands that can be used at different times.
 
 ### npm start
-Starts the server on port 3000
+Starts the server on port 3000 as specified on .env file
 
 ### npm run build-dev
 Builds the development dist folder - no minimization
@@ -14,10 +14,10 @@ Builds the development dist folder - no minimization
 Builds the production dist folder
 
 ### npm run launch
-Builds the production dist folder and starts the server
+Builds the production dist folder and starts the server on port 3000
 
 
-```js
+```json
 "scripts": {
     "start": "nodemon src/server/server.js",
     "build-dev": "webpack --config ./src/webpack.dev.js",
