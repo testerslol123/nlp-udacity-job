@@ -1,8 +1,24 @@
-
+@import "./variables";
+@import "./mixings";
 
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+body{
+
+    @include flex-centered-direction(column, 0px);
+    height: 100vh;
+    background: linear-gradient($themeColor2, $themeColor1);
+    font-family: sans-serif;
+    color: $textColor1;
+}
+
+.container {
+    @include flex-centered-direction(column, 0px);
+    padding-top: 50px;
 }

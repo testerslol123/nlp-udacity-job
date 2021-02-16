@@ -1,5 +1,28 @@
-@mixin flex-centered-column {
+@import "./variables";
+
+@mixin flex-centered-direction($direction, $margin) {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-items: center;
+    flex-direction: $direction;
+    margin: $margin,
+}
+
+
+@mixin flex-centered-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+@mixin response-text {
+    text-decoration: none;
+    color: $textColor2;
+}
+
+@mixin inputs-settings {
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
 }

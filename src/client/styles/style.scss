@@ -2,75 +2,44 @@
 @import "./variables";
 @import "./mixings";
 
-input {
-    width : 350px;
-    height: 2rem;
-    padding: 0;
-    margin: 0;
-}
 
-#click{
-    width : 150px;
-    height: 2rem;
-    padding: 0;
-    margin: 0;
-    border-radius: 5px;
-    &:hover{
-        background-color: $themeColor2;
-    }
-}
-
-
-body{
-
-    @include flex-centered-column();
-    height: 100vh;
-    background: linear-gradient($themeColor2, $themeColor1);
-    font-family: sans-serif;
-    color: $textColor;
-}
-
-
-.container {
-    @include flex-centered-column();
-    padding-top: 50px;
-
-
-}
-
-.collect {
-    @include flex-centered-column();
-    justify-content: center;
-}
-
-.collect input {
-    margin: 20px;
-}
-
-
-
-.top-display {
-    @include flex-centered-column();
-    justify-items: center;
+.top-display .display .display-block .display-box {
+    @include flex-centered-direction(column, 0px); 
     margin: auto;
 }
 
-
-.display {
-    @include flex-centered-column();
-    justify-items: center;
-
+#click{
+    @include inputs-settings();
+    width : 150px;
+    &:hover{
+        background-color: $themeColor2; 
+    }
 }
 
+.collect {
+    @include flex-centered-direction(column, 20px); 
+    input{
+        @include inputs-settings();
+        width : 350px;
+        margin: 20px;
+    }
+    
+}
 
-.display-block {
-    display: flex;
+.display {
+    padding-top: 30px;
 }
 
 .display-box {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    @include response-text();
     height: 50px;
     width: 300px;
+}
+
+.coupled {
+    @include flex-centered-direction(row, 0px);
+}
+
+.Label-box {
+    padding-bottom: 15px;
 }

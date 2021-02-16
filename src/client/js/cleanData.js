@@ -5,10 +5,10 @@ function cleanData(data) {
     const agreement = document.getElementById('agreement'); 
     const subjectivity = document.getElementById('subjectivity');
 
-    irony.textContent = `IRONY: ${data.irony}`;
-    confidence.textContent = `CONFIDENCE: ${data.confidence}`;
-    agreement.textContent = `AGREEMENT: ${data.agreement}`;
-    subjectivity.textContent = `SUBJECTIVITY: ${data.subjectivity}`;
+    irony.textContent = `${data.irony}`;
+    confidence.textContent = `${data.confidence}`;
+    agreement.textContent = `${data.agreement}`;
+    subjectivity.textContent = `${data.subjectivity}`;
     console.log()
 
 }
