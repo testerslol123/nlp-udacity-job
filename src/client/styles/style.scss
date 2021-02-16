@@ -3,9 +3,9 @@
 @import "./mixings";
 
 
-.top-display .display .display-block .display-box {
+.top-display .display .display-block {
     @include flex-centered-direction(column, 0px); 
-    margin: auto;
+
 }
 
 #click{
@@ -31,9 +31,11 @@
 }
 
 .display-box {
+    @include flex-centered-direction(column, 0px); 
     @include response-text();
     height: 50px;
     width: 300px;
+
 }
 
 .coupled {
