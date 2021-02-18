@@ -10,7 +10,7 @@ dotenv.config();
 
 
 const port = process.env.PORT;
-
+console.log(process.env.API_KEY);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
