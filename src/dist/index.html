@@ -1,7 +1,62 @@
-<!doctype html><html lang="en"><head><base href="/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NLP Processing</title><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head><body><div class="container"><h1 class="header">Natural Language Processing App</h1><div class="collect"><input placeholder="Enter the URL" name="url" id="url"> <input type="submit" id="click" name="" value="Process" onclick="return Client.handleClick(event)" onsubmit="return client.handleClick(event)"></div><div class="top-display"><div class="display"><div class="coupled"><div class="display-block"><div class="Label-box">IRONY</div><div class="display-box" id="irony"></div></div><div class="display-block"><div class="Label-box">CONFIDENCE</div><div class="display-box" id="confidence"></div></div></div><div class="coupled"><div class="display-block"><div class="Label-box">AGREEMENT</div><div class="display-box" id="agreement"></div></div><div class="display-block"><div class="Label-box">SUBJECTIVITY</div><div class="display-box" id="subjectivity"></div></div></div></div></div></div><script>// Check that service workers are supported
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>NLP Processing</title>
+<script defer src="main.js"></script></head>
+<body>
+    <div class="container">
+        <h1 class="header">Natural Language Processing App</h1>
+
+        <div class="collect">
+            <input type="text" placeholder="Enter the URL" name="url" id="url">
+            <input type="submit" id="click" name="" value="Process" onclick="return Client.handleClick(event)" onsubmit="return client.handleClick(event)">
+
+        </div>
+
+
+        <div class="top-display">
+            <div class="display">
+                <div class="coupled">
+                    <div class="display-block">
+                        <div class="Label-box">IRONY</div>
+                        <div class="display-box" id="irony"></div>
+                    </div>
+                    <div class="display-block">
+                        <div class="Label-box">CONFIDENCE</div>
+                        <div class="display-box" id="confidence"></div>
+                    </div>
+                </div>
+                <div class="coupled">
+                    <div class="display-block">
+                        <div class="Label-box">AGREEMENT</div>
+                        <div class="display-box" id="agreement"></div>
+                    </div>
+                    <div class="display-block">
+                        <div class="Label-box">SUBJECTIVITY</div>
+                        <div class="display-box" id="subjectivity"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        // Check that service workers are supported
         if ('serviceWorker' in navigator) {
             // Use the window load event to keep the page load performant
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js');
             });
-        }</script></body></html>
+        }
+       </script>
+
+</body>
+</html>
