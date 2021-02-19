@@ -1,5 +1,5 @@
 # Natural Language Processing - Development with Webpack
-This app takes user input in the form of a URL, calls the Meaningcloud API, and displays the call results.
+This app takes user input in the form of a URL, calls the **Meaningcloud API**, and displays the call results.
 The app is compiled using <a href="https://webpack.js.org/">Webpack</a>.
 
 ## Compiling the app - Runnin the Server
@@ -59,5 +59,5 @@ app.get('/', (req, res) => {
 
 ```
 ### Testing the app with dev-server
-In order to test the full functionality of the app, **you must run the server.js** as well as the dev server.
+In order to test the full functionality of the app, **you must run server.js** as well as the dev server.
 
