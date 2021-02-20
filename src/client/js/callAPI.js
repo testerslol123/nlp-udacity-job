@@ -2,16 +2,16 @@
 import {cleanData} from "/src/client/js/cleanData.js"
 
 
-async function callAPI(){
+async function callAPI(url){
 
-    fetch('/api', {
+    fetch('http://localhost:5000/api', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            url: url.value
+            url: url
         })
 
     }).then(res => res.json()).then(data => {

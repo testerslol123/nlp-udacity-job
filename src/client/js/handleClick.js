@@ -9,10 +9,9 @@ function handleClick()
         
         console.log('button pressed')
         
-        
         if (checkURL(url.value)) {
-            console.log(url.value);
-            callAPI();
+            console.log(url);
+            callAPI(url.value);
             }
         else 
             {

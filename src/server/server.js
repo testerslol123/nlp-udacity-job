@@ -6,7 +6,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const dotenv = require('dotenv');
-dotenv.config(({ path: "../../" }));
+dotenv.config(({ path: path.resolve(__dirname, '../../.env') }));
 
 
 const port = process.env.PORT;
@@ -24,6 +24,7 @@ app.post('/api', async (req, res) => {
 
   const sent_url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${req.body.url}&model=general`;
   console.log(sent_url);
+  console.log('sendinig url');
 
 
   await axios
