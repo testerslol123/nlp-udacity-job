@@ -6,7 +6,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config(({ path: "../../" }));
 
 
 const port = process.env.PORT;
